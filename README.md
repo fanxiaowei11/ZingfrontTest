@@ -2,7 +2,7 @@
 
 > 
 
-## Build Setup
+## 思路
 
 ``` 
 题目一
@@ -16,7 +16,8 @@
   4.循环第二步得到的数组，找到长度为第三步得
   到的长度的那一项输出（即等到所求）
 
-  测试结果 ![demo1](https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo1.png)
+  测试结果 
+  <img src="https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo1.png" width="411" height="134">
   
 题目二
     假设数字为n，数字拆分至少是2个数字，所以
@@ -26,6 +27,7 @@
     开始位置。第二次循环用来判断累加的结果是
     否等于n，若等于n则符合要求
   
-   测试结果 ![demo2](https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo2.png)
-    ![demo3](https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo3.png)
+   测试结果
+   <img src="https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo2.png" width="391" height="225">
+   <img src="https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo3.png" width="391" height="225">
 ```
