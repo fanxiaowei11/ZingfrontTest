@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>题目一</title>
+</head>
+<body>
+  <div>
+    <span>字符串1</span>
+    <input />
+  </div>
+  <div>
+    <span>字符串2</span>
+    <input />
+    <button>确定</button>
+  </div>
+  <div>
+    <input />
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+/**
+ * [getArrEqual 取出两个数组的相同元素]
+ * @author [fanxw]
+ * @date   2018-10-11
+ * @param  {[Array]}   arr1 [需要比较的数组]
+ * @param  {[Array]}   arr2 [需要比较的数组]
+ * @return {[Array]}        [相同的元素的数组]
+ */
+var getArrEqual = (arr1, arr2) => {
+    let newArr = []
+    for (let i = 0; i < arr2.length; i++) {
+        for (let j = 0; j < arr1.length; j++) {
+            if (arr1[j] === arr2[i]) {
+                newArr.push(arr1[j])
+            }
+        }
+    }
+    return newArr
+}
+/**
+ * [getArr 将字符串用空格分开转换成数组]
+ * @author [fanxw]
+ * @date   2018-10-11
+ * @param  {[string]}   str [description]
+ * @return {[Array]}       [返回的数组]
+ */
+var getArr = (str) => {
+  let arr = str.toLowerCase().split(' ')
+  return arr
+}
+/**
+ * [getArrSecondLength 获取一个数组中长度第二长的项]
+ * @author [fanxw]
+ * @date   2018-10-11
+ * @param  {[Array]}   arr [传入的数组]
+ * @return {[String]}       [长度第二长的单词]
+ */
+var getArrSecondLength = (arr) => {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++){
+    newArr.push(arr[i].length)
+  }
+  newArr.sort(function(a, b){
+    return b - a
+  })
+  const removeDuplicateItems = arr => [...new Set(arr)]
+  newArr = removeDuplicateItems(newArr)
+  if (newArr.length > 1){
+    newArr[1]
+    for (let i = 0; i < arr.length; i++){
+      if (arr[i].length === newArr[1]){
+        return arr[i]
+      }
+    }
+  }else{
+    return 'NULL'
+  }
+}
+/**
+ * [getSecondCommonLengthWord description]
+ * @author [fanxw]
+ * @date   2018-10-11
+ * @param  {[String]}   str1 [传入的字符串]
+ * @param  {[String]}   str2 [传入的字符串]
+ * @return {[String]}        [共同单词且长度第二长]
+ */
+var getSecondCommonLengthWord = (str1, str2) => {
+  let arr1 = getArr(str1)
+  let arr2 = getArr(str2)
+  let newArr = getArrEqual(arr1, arr2)
+  if (newArr.length<2){
+    return 'NULL'
+  }else{
+    return getArrSecondLength(newArr)
+  }
+}
+/**
+ * [测试]
+ */
+var btn = document.getElementsByTagName("button")[0]
+var inp1 = document.getElementsByTagName("input")[0]
+var inp2 = document.getElementsByTagName("input")[1]
+var inp3 = document.getElementsByTagName("input")[2]
+btn.onclick = function () {
+  inp3.value = getSecondCommonLengthWord(inp1.value, inp2.value)
+}
+</script>

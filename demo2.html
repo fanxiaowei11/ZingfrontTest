@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>第二题</title>
+</head>
+<body>
+  <div>
+    <span>请输入数字</span>
+    <input />
+    <button id="btn">确定</button></div>
+  <div>
+    <span>拆分为</span>
+  </div>
+  <div>
+    <textarea rows="10" cols="40"></textarea>
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+/**
+ * [description]
+ * @author [fanxw]
+ * @date   2018-10-11
+ * @param  {[number]}   num [需要拆分的对象]
+ * @return {[Array or string]}       [返回的结果]
+ */
+var splitNumber = (num) => {
+  let result = []
+  for (let j = 1; j < (num/2); j++) {
+    let sum = 0
+    for (let i = j; i <= (num/2)+1; i++) {
+      if (sum < num) {
+        sum += i
+        if (sum === num) {
+          let arr = []
+          for (let m = j; m <= i; m++) {
+            arr.push(m)
+          }
+          result.push(arr.join(' '))
+        }
+      }
+    }
+  }
+  if (result.length > 0) {
+    return result
+  } else {
+    return 'NONE'
+  }
+}
+/**
+ * 测试
+ * @type {[type]}
+ */
+var btn = document.getElementsByTagName("button")[0]
+var inp = document.getElementsByTagName("input")[0]
+var text = document.getElementsByTagName("textarea")[0]
+console.log(btn)
+btn.onclick = function () {
+  var textArr = splitNumber(Number(inp.value))
+  var str = ''
+  if (textArr === 'NONE'){
+    str = textArr
+  } else {
+    for (let i = 0; i < textArr.length; i++){
+      str += textArr[i] + '\n'
+    }
+  }
+  
+  text.value = str
+}
+
+
+</script>
