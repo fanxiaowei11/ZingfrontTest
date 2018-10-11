@@ -15,8 +15,6 @@
   的长度）
   4.循环第二步得到的数组，找到长度为第三步得
   到的长度的那一项输出（即等到所求）
-
-  测试结果 ![image](https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo1.png)
   
 题目二
     假设数字为n，数字拆分至少是2个数字，所以
@@ -25,8 +23,4 @@
     次层从1开始，到n/2结束，来确定拆分数字的
     开始位置。第二次循环用来判断累加的结果是
     否等于n，若等于n则符合要求
-  
-   测试结果
-  ![image](https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo2.png)
-  ![image](https://github.com/fanxiaowei11/ZingfrontTest/blob/master/img/demo3.png)
 ```
